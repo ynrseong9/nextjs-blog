@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://nextjs-blog-5u1v3gtt3-ynrseong9.vercel.app
+
+# Sitemaps
+Sitemap: https://nextjs-blog-5u1v3gtt3-ynrseong9.vercel.app/sitemap.xml
