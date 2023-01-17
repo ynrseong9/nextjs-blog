@@ -1,13 +1,13 @@
 import Head from "next/head";
-import Layout, { siteTitle } from "../components/Layout";
+import { siteTitle } from "../pages/_document";
 import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
-import Date from "../components/Date";
+import Date from "@/components/Date";
 
 export default function Home({ allPostsData }) {
   return (
-    <Layout home>
+    <>
       <Head>
         <title>{siteTitle}</title>
       </Head>
@@ -29,7 +29,7 @@ export default function Home({ allPostsData }) {
           ))}
         </ul>
       </section>
-    </Layout>
+    </>
   );
 }
 

@@ -1,10 +1,10 @@
-import Layout from "../../components/Layout";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import Head from "next/head";
-import Date from "../../components/Date";
+import Date from "@/components/Date";
 import utilStyles from "../../styles/utils.module.css";
 import { MDXRemote } from "next-mdx-remote";
-import CodeBlock from "../../components/CodeBlock";
+import CodeBlock from "@/components/CodeBlock";
+import { siteTitle } from "../../pages/_document";
 
 const Button = ({ children }) => {
   return (
@@ -21,9 +21,9 @@ const components = { Button, CodeBlock };
 
 export default function Post({ postData }) {
   return (
-    <Layout>
+    <>
       <Head>
-        <title>{postData.title}</title>
+        <title>{`${postData.title} - ${siteTitle}`}</title>
       </Head>
       <article>
         <h1 className={utilStyles.headingXl}>{postData.title}</h1>
@@ -37,7 +37,7 @@ export default function Post({ postData }) {
           <MDXRemote {...postData.mdxSource} components={components} />
         )}
       </article>
-    </Layout>
+    </>
   );
 }
 
